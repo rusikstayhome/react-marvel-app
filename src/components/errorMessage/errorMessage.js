@@ -2,7 +2,7 @@ import img from './errorgif.gif'
 
 const ErrorMessage = () => {
     return (
-        <img src={img} />
+        <img src={img} alt="Error" />
     )
 }
 
