@@ -10,7 +10,7 @@ import thor from '../../resources/img/thor.jpeg';
 
 class CharInfo extends Component {
   state = {
-    char: {},
+    char: null,
     loading: false,
     error: false
   }
@@ -19,6 +19,13 @@ class CharInfo extends Component {
 
   componentDidMount() {
     this.updateChar();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.charId !== prevProps.charId) {
+      this.updateChar();
+    }
+
   }
 
   updateChar = () => {
@@ -75,6 +82,8 @@ class CharInfo extends Component {
 }
 
 const View = ({ char }) => {
+  const { name, description, thumbnail, homepage, wiki } = char;
+
   return (
     <>
       <div className="char__basics">
