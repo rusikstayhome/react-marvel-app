@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Spinner from '../spinner/Spinner';
@@ -62,6 +62,7 @@ class CharList extends Component {
     renderItems(arr) {
         const items = arr.map((item) => {
             let imgStyle = { 'objectFit': 'cover' };
+
             if (item.thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
                 imgStyle = { 'objectFit': 'unset' };
             }
