@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import MarvelService from '../../services/MarvelService';
+import useMarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/errorMessage';
 
@@ -15,7 +15,7 @@ class RandomChar extends Component {
     error: false
   }
 
-  marvelService = new MarvelService();
+  marvelService = useMarvelService();
 
   componentDidMount() {
     this.updateChar();
